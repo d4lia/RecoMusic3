@@ -1,0 +1,129 @@
+body {
+  background: #30d5c8;
+}
+
+.white {
+  color: white;
+}
+
+#title-text {
+  font-family: "Luckiest Guy", cursive;
+  text-align: center;
+  font-size: 50px;
+  text-shadow: 2px 2px 5px black;
+}
+
+#fave-artist-title {
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+/*Top navigation*/
+
+#top-nav {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  background-color: none;
+  align-items: center;
+  justify-content: center;
+}
+
+#top-nav-item a {
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: "Raleway", sans-serif;
+  font-size: 25px;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#top-nav-item a:visited {
+  color: white;
+}
+
+#top-nav-item a:hover {
+  color: hotpink;
+}
+
+#top-nav-item a:active {
+  color: rgb(0, 255, 149);
+}
+
+#home {
+  width: 40px;
+  height: 40px;
+}
+
+#insta {
+  width: 40px;
+  height: 40px;
+}
+
+/* Dalia's Picks image grid */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  grid-gap: 1em;
+}
+
+/* hover styles */
+.artist-list {
+  position: relative;
+}
+
+.artist-image {
+  line-height: 0;
+  overflow: hidden;
+}
+
+.artist-image img {
+  width: 100%;
+  filter: blur(0px);
+  transition: filter 0.3s ease-in;
+  transform: scale(1.1);
+}
+
+.artist-title {
+  font-size: 2.5em;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  z-index: 1;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s;
+  background: rgba(90, 0, 10, 0.4);
+  color: white;
+
+  /* position the text in the middle*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.artist-list:hover .artist-title {
+  opacity: 1;
+}
+
+.artist-list:hover .artist-image img {
+  filter: blur(2px);
+}
+
+/* for touch screen devices */
+@media (hover: none) {
+  .artist-title {
+    opacity: 1;
+  }
+  .artist-image img {
+    filter: blur(2px);
+  }
+}
